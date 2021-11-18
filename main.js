@@ -7,7 +7,7 @@ var player_object = "";
 var block_image_object = "";
 function player_update()
 {
-    fabric.Image.fromURL("player.png", function(Img) {
+    fabric.Image.fromURL("player.jpg", function(Img) {
     player_object = Img;
     player_object.scaleToWidth(150);
     player_object.scaleToHeight(140);
@@ -116,4 +116,43 @@ if(keyPressed == '67')
     new_image("cloud.jpg");
     console.log("c");
 }                                                                                                                                                                                                
+}
+function up()
+{
+     if(player_y >=0)
+     {
+         player_y = player_y - block_image_heigth;
+         canvas.remove(player_object);
+         player_update();
+     }    
+}
+
+function down()
+{
+     if(player_y <=500)
+     {
+         player_y = player_y + block_image_heigth;
+         canvas.remove(player_object);
+         player_update();
+     }    
+}
+
+function left()
+{
+     if(player_x >0)
+     {
+         player_x = player_x - block_image_width;
+         canvas.remove(player_object);
+         player_update();
+     }    
+}
+
+function right()
+{
+     if(player_x <=850)
+     {
+         player_x = player_x + block_image_width;
+         canvas.remove(player_object);
+         player_update();
+     }    
 }
